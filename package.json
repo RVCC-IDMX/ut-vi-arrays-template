@@ -1,14 +1,14 @@
 {
-  "name": "js-stmnts-test",
+  "name": "js-arrays-test",
   "version": "1.0.0",
-  "description": "JS unit testing using Jest",
+  "description": "JS unit testing",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --coverage",
-    "test:watch": "jest --watch",
-    "test:watchAll": "jest --watchAll",
-    "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "test:1": "vitest tests/arrays-01.test.js --globals --coverage --run --reporter verbose",
+    "test:2": "vitest tests/arrays-02.test.js --globals --coverage --run --reporter verbose",
+    "test:3": "vitest tests/arrays-03.test.js --globals --coverage --run --reporter verbose",
+    "test:4": "vitest tests/arrays-04.test.js --globals --coverage --run --reporter verbose",
+    "test": "cd tests & vitest --coverage --run arrays-01.test.js arrays-02.test.js arrays-03.test.js arrays-04.test.js --silent --globals "
   },
   "repository": {
     "type": "git",
@@ -21,23 +21,11 @@
   },
   "homepage": "https://github.com/RVCC-IDMX/js-test-1-template#readme",
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-jest": "^24.4.2",
-    "husky": "^7.0.2",
-    "jest": "^26.6.3",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.4.0"
-  },
-  "lint-staged": {
-    "**/*.{js,mjs,ejs}": [
-      "eslint --cache --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "@vitest/coverage-c8": "^0.23.4",
+    "@vitest/ui": "^0.23.4",
+    "eslint": "^8.24.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "vitest": "^0.23.4"
   }
 }
