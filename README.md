@@ -57,8 +57,6 @@ If a test fails, vitest will identify it as failing and print one or more error 
 
 One-by-one and in order, edit each JavaScript file and follow the instructions for each coding skill. You should run the test after each completed skill and see the pass count increase. When one file passes completely, you are ready for the next file.
 
-Start with arrays-01.test.js and finish with arrays-04.test
-
 ---
 
 ## Continue writing and fixing code until all tests pass
@@ -72,6 +70,8 @@ When you feel the coding skills are completed, the following command will test a
 ## Measuring Coverage
 
 Coverage reports will be placed in the coverage folder. To view, open index.html using Liver Server.
+
+[Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 ---
 
