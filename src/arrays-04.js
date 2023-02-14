@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*
  * arrays-04.js
  * Language: javascript
