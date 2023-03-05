@@ -22,7 +22,7 @@ function addUpArrayElements(arr) {
 }
 
 /**
- * Squares each number if the array
+ * Squares each number of the array
  * @param {array} arr - the passed in array of numbers
  * @returns {array} - a new array with all the elements squared
  * ? example: [1, 2, 3, 4, 5] => [1, 4, 9, 16, 25]
