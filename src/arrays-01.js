@@ -22,7 +22,6 @@
  * @param {array} arr - the array
  * @returns {*} - the first (0th) element in the array
  * ? example: [1, 2, 3, 4, 5] => 1
- * ? https://bit.ly/3EUI0j9 - Reading and Writing Array Elements
  */
 function getFirstValue(arr) {
   // write your code here & return value
@@ -67,7 +66,6 @@ function createSizedArray(size) {
  * both to the front and the back of the array
  * @param {array} arr - array to be modified
  * @returns modified array
- * ? https://bit.ly/39z4FTE - Adding and Deleting Array Elements
  */
 function modifyArrayByAdding(arr) {
   // write your code here & return value

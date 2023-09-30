@@ -6,8 +6,6 @@
  * Path: src/arrays-02.js
  *
  * Description: String methods
- * Textbook: https://bit.ly/3AEQg4x
- *
  * ? Strings are primitive data types and arrays are objects (passed by reference).
  * ?
  * ? But many string methods treat strings as if they are arrays of characters.
@@ -32,7 +30,6 @@
  * ? - length - not a method but a property
  * ? - split()
  * ? - replace()
- * ? refer to the textbook for more details https://bit.ly/3AEQg4x
  * */
 
 /**

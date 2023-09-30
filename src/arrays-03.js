@@ -6,7 +6,6 @@
  * Path: src/arrays-03.js
  *
  * Description: Array methods
- * https://bit.ly/3udxkXZ
  *
  * */
 
@@ -87,8 +86,7 @@ function makeTheString(arr, separator) {
  * @param {array} arr - the array to reverse
  * @returns {array} - a new array with the elements reversed
  * ? example: [1, 2, 3, 4, 5] => [5, 4, 3, 2, 1]
- * ? must use the reverse() array method - https://mzl.la/3EXccdo
- *  must use the reverse on a shallow copy of the original array - https://bit.ly/39ASLc0
+ * ? must use the reverse on a shallow copy of the original array
  */
 function reverseTheArray(arr) {
   // write your code here & return value
@@ -100,7 +98,6 @@ function reverseTheArray(arr) {
  * @returns {array} - a new array with the elements added to mirror the original
  * ? example: [ 1, 2, 3] => [1, 2, 3, 2, 1]
  * ? example: [ 1, 2, 3, 4] => [1, 2, 3, 4, 3, 2, 1]
- * ? must use the concat() array method - https://bit.ly/3lZkNE2
  */
 function makeMirrorArray(arr) {
   // write your code here & return value
