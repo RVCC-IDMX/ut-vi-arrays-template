@@ -42,7 +42,7 @@ function removeStrings(arr) {
  * ? We haven't covered how functions and methods can have a variable
  * ? number of arguments passed to it when called but that is how some functions work.
  * ? In these cases, and by using the spread operator (...), we can pass
- * ? an array of elements as individual arguments to a function. - https://bit.ly/39ASLc0
+ * ? an array of elements as individual arguments to a function. - https://mzl.la/4bKFQ68
  * ? example: Math.min(...[1, 2, 23, 4, 5, -10, 6]) => -10
  * ? example: Math.max(...[1, 2, 23, 4, 5, -10, 6]) => 23
  * ?
@@ -71,7 +71,7 @@ function findMinMax(arr) {
  * ? changed inside a function. Unlike slice and concat, splice modifies the array
  * ? on which it is invoked. Since the above says you must not change the original array,
  * ? you should create a shallow copy of the array and use splice on that copy.
- * ? https://bit.ly/39ASLc0
+ * ? https://mzl.la/42IRj20
  */
 function getTelNo(numbers) {
   // write your code here & return value

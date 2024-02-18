@@ -98,7 +98,7 @@ function findElementAtIndex(arr, index) {
  * @returns {number} - integer index of the first occurrence of the element
  * ? example: [1, 2, 3, 4, 5], value = 3 => 2
  * ? example: [1, 2, 3, 4, 5], value = 6 => -1
- * ? hint: https://bit.ly/2ZyFaAj - Array Searching and Sorting Methods
+ * ? hint: https://bit.ly/4bL1MxZ - Array Searching and Sorting Methods
  */
 function findElementByValue(arr, value) {
   // write your code here & return value
@@ -132,7 +132,7 @@ function makeStringFromArray(arr) {
  * @param {array} arr - array to be cloned
  * @returns {array} - a new array with the same elements as the passed in array
  * ? example: [1, 2, 3, 4, 5] => [1, 2, 3, 4, 5]
- * ? https://bit.ly/39ASLc0 - The spread operator
+ * ? https://mzl.la/4bKFQ68- The spread operator
  */
 function createShallowCopy(arr) {
   // write your code here & return value
