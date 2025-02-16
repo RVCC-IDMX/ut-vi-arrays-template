@@ -5,116 +5,94 @@
  * Test: tests/arrays-02.test.js
  * Path: src/arrays-02.js
  *
- * Description: String methods
- * ? Strings are primitive data types and arrays are objects (passed by reference).
- * ?
- * ? But many string methods treat strings as if they are arrays of characters.
- * ? A big difference is that the string methods are not destructive because
- * ? they must return a new string.
- * ?
- * ? This means methods like replace() and toUpperCase() return new strings:
- * ? they cannot modify the string on which they are invoked because strings are immutable.
+ * Description: String methods and immutability.
  *
- * ? The more popular string methods are:
- * ? - charAt()
- * ? - charCodeAt()
- * ? - concat()
- * ? - indexOf()
- * ? - lastIndexOf()
- * ? - slice()
- * ? - substring()
- * ? - toLowerCase()
- * ? - toUpperCase()
- * ? - trim()
- * ? - valueOf()
- * ? - length - not a method but a property
- * ? - split()
- * ? - replace()
- * */
+ * Concepts:
+ *  - Strings are immutable; methods return new strings.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+ */
 
 /**
- * Finds the character at the specified index
- * @param {string} str - the string to be searched
- * @param {number} indx - the index of the string
- * @returns {string} - the character at the index
+ * Returns the character at the specified index.
+ * @param {string} str - The string.
+ * @param {number} indx - The index.
+ * @returns {string} The character at that index.
  */
 function findTheCharacterAtIndex(str, indx) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Use the charAt() method.
 }
 
 /**
- * Slice a string
- * @param {string} str - the string
- * @param {number} start - the start index
- * @param {number} end - the end index
- * @returns {string} - the sliced string
+ * Returns a slice of the string from start index up to, but not including, the end index.
+ * @param {string} str - The string.
+ * @param {number} start - The start index.
+ * @param {number} end - The end index.
+ * @returns {string} The sliced string.
  */
 function sliceTheString(str, start, end) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Splits a string into an array of substrings
- * @param {string} str - the string
- * @param {string} separator - the separator
- * @returns {array} - the array of substrings
+ * Splits a string into an array of substrings based on the given separator.
+ * @param {string} str - The string.
+ * @param {string} separator - The separator.
+ * @returns {Array} An array of substrings.
  */
 function splitTheString(str, separator) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Returns a string all in uppercase
- * @param {string} str - the string
- * @returns {string} - the string with all the letters in uppercase
+ * Converts the entire string to uppercase.
+ * @param {string} str - The string.
+ * @returns {string} The uppercase string.
  */
 function makeAllUpperCase(str) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Returns a string all in lowercase
- * @param {string} str - the string
- * @returns {string} - the string with all the letters lowercase
+ * Converts the entire string to lowercase.
+ * @param {string} str - The string.
+ * @returns {string} The lowercase string.
  */
 function makeAllLowerCase(str) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Returns a word with its first letter capitalized and all other letters in lowercase
- * @param {string} word - a single word
- * @returns {string} - the string with all the letters lowercase expect the first one
- * which is uppercase
- * ? ex: 'hello' => 'Hello'
- * ? ex: 'HELLO' => 'Hello'
+ * Converts a single word to title case.
+ * @param {string} word - A single word.
+ * @returns {string} The word in title case.
  */
 function makeWordTitleCase(word) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Capitalize the first letter and lowercase the rest.
 }
 
 /**
- * Returns a string with some of it replaced
- * @param {string} str - the string
- * @param {string} oldStr - the string to be replaced
- * @param {string} newStr - the string to replace the old string
- * @returns {string} - the string with the old string replaced by the new string
- * ? ex: 'hello world', 'hello', 'hi' => 'hi world'
+ * Replaces all occurrences of oldStr with newStr in a string.
+ * @param {string} str - The original string.
+ * @param {string} oldStr - The substring to be replaced.
+ * @param {string} newStr - The replacement string.
+ * @returns {string} The modified string.
  */
 function replaceTheString(str, oldStr, newStr) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Try using the split() method, then join.
 }
 
 /**
- * Returns a string with the first letter of each word capitalized
- * @param {string} sentence - the sentence
- * @returns {string} - the sentence with all the words capitalized
- * ? ex: 'hello world' => 'Hello World'
- * ? NOTE: this is more challenging than the others have been
- * ? hint: use split() and makeWordTitleCase()
+ * Converts a sentence so that each word's first letter is capitalized.
+ * @param {string} sentence - The sentence.
+ * @returns {string} The title-cased sentence.
  */
 function makeSentenceTitleCase(sentence) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Split the sentence into words, transform each word, then join them back.
 }
 
 module.exports = {

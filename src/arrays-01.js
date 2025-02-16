@@ -1,141 +1,128 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-param-reassign */
 /*
  * arrays-01.js
  * Language: javascript
  * Test: tests/arrays-01.test.js
  * Path: src/arrays-01.js
  *
- * Description: Basic array operations
+ * Description: Basic array operations.
  *
- * ? Arrays are a collection of values and are passed by reference
- * ? Arrays are zero-indexed
- * ? Arrays are mutable
- * ? Arrays are iterable
- * ? Arrays are objects
- * ? Because they are passed by reference, arrays can be modified
- * ? in a function and the changes will be permanent
+ * Concepts:
+ *  - Arrays are zero-indexed, mutable, and iterable.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
  */
 
 /**
- * Returns the first element (indexing from 0) of an array
- * @param {array} arr - the array
- * @returns {*} - the first (0th) element in the array
- * ? example: [1, 2, 3, 4, 5] => 1
+ * Returns the first element of an array.
+ * @param {Array} arr - The array.
+ * @returns {*} The first element.
  */
 function getFirstValue(arr) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Returns a new array with 4 elements
- * @param {*} a - 0th element of the array
- * @param {*} b - 1st element of the array
- * @param {*} c - 2nd element of the array
- * @param {*} d - 3rd element of the array
- * @returns {array} - array of the 4 elements
+ * Returns an array composed of the four provided values.
+ * @param {*} a - First element.
+ * @param {*} b - Second element.
+ * @param {*} c - Third element.
+ * @param {*} d - Fourth element.
+ * @returns {Array} An array with the four elements.
  */
 function makeArray(a, b, c, d) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Creates a new array of the first 5 prime numbers
- * @returns {array} array of the first 5 prime numbers
- * starting at 2
- * ? hint: use an array literal
- *
+ * Creates a new array of the first five prime numbers.
+ * @returns {Array<number>} [2, 3, 5, 7, 11]
  */
 function createFirstFivePrimes() {
-  // write your code here & return value
+  // TODO: implement code
 }
+
 /**
- * Creates a new array with a number of elements
- * @param {number} size - number of elements in the array
- * @returns {array} - new array with the specified number of elements
- * ? create an array of numbers from 0 to size - 1
- * ? example: size = 3 => [0, 1, 2]
- * ? must use a for loop
+ * Creates an array of sequential numbers from 0 up to size - 1.
+ * @param {number} size - The size of the array.
+ * @returns {Array<number>} The new array.
  */
 function createSizedArray(size) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Use a for loop and push numbers from 0 to size - 1 into an array.
 }
 
 /**
- * Modifies the array by adding the number 1
- * both to the front and the back of the array
- * @param {array} arr - array to be modified
- * @returns modified array
+ * Modifies an array by adding the number 1 at both the beginning and the end.
+ * Works on a shallow copy.
+ * @param {Array} arr - The original array.
+ * @returns {Array} The modified array.
  */
 function modifyArrayByAdding(arr) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Create a shallow copy and then use unshift() and push().
 }
 
 /**
- * Modifies the array by deleting the beginning and end elements
- * @param {array} arr - the array to modify
- * @returns {array} - the modified array
- * ? example: [1, 2, 3, 4, 5] => [2, 3, 4]
+ * Modifies an array by removing the first and last elements.
+ * Works on a shallow copy.
+ * @param {Array} arr - The array to modify.
+ * @returns {Array} The modified array.
  */
 function modifyArrayByDeleting(arr) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Create a shallow copy and use shift() and pop() if the array is not empty.
 }
 
 /**
- * Finds and returns the element in the array at a particular index
- * @param {array} arr - the passed in array
- * @param {number} index - the index at which to find the element
- * @returns {*} - the element at the specified index
- * ? example: [1, 2, 3, 4, 5], index = 2 => 3
+ * Returns the element at a specified index.
+ * @param {Array} arr - The array.
+ * @param {number} index - The index.
+ * @returns {*} The element at the given index.
  */
 function findElementAtIndex(arr, index) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Finds the first index of an element in an array
- * @param {array} arr - the array
- * @returns {number} - integer index of the first occurrence of the element
- * ? example: [1, 2, 3, 4, 5], value = 3 => 2
- * ? example: [1, 2, 3, 4, 5], value = 6 => -1
- * ? hint: https://bit.ly/4bL1MxZ - Array Searching and Sorting Methods
+ * Finds the index of the first occurrence of a given value.
+ * Returns -1 if not found.
+ * @param {Array} arr - The array.
+ * @param {*} value - The value to find.
+ * @returns {number} The index or -1 if not found.
  */
 function findElementByValue(arr, value) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Modifies the array replacing a value at index with a new value
- * @param {array} arr - the passed in array
- * @param {number} index - the index at which to find the element
- * @param {*} value - the value to be swapped
- * @returns {array} - the modified array
- * ? example: [1, 2, 3, 4, 5], index = 2, value = 0 => [1, 2, 0, 4, 5]
+ * Replaces the element at a specific index with a new value.
+ * Note: This function modifies the original array.
+ * @param {Array} arr - The array.
+ * @param {number} index - The index to modify.
+ * @param {*} value - The new value.
+ * @returns {Array} The modified array.
  */
 function changeElementAtIndex(arr, index, value) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Creates a string from an array of letters
- * @param {array} arr - array to use
- * @returns {string} - made from array elements
- * ? example: ['a', 'b', 'c'] => 'abc'
- * ? https://mzl.la/3ib7Dm3
+ * Joins all elements of an array into a string without any separator.
+ * @param {Array} arr - The array of elements.
+ * @returns {string} The joined string.
  */
 function makeStringFromArray(arr) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Create a shallow copy of an array
- * @param {array} arr - array to be cloned
- * @returns {array} - a new array with the same elements as the passed in array
- * ? example: [1, 2, 3, 4, 5] => [1, 2, 3, 4, 5]
- * ? https://mzl.la/4bKFQ68- The spread operator
+ * Creates a shallow copy of an array using the spread operator.
+ * @param {Array} arr - The array.
+ * @returns {Array} A new array with the same elements.
  */
 function createShallowCopy(arr) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 module.exports = {

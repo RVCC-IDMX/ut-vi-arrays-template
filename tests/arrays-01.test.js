@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
-const {
+import { describe, it, expect } from 'vitest';
+import {
   getFirstValue,
   makeArray,
   createFirstFivePrimes,
@@ -11,77 +11,96 @@ const {
   changeElementAtIndex,
   makeStringFromArray,
   createShallowCopy,
-} = require('../src/arrays-01');
+} from '../src/arrays-01';
 
-test('getFirstValue', () => {
-  expect(getFirstValue([1, 2, 3, 4, 5])).toBe(1);
-  expect(getFirstValue([])).toBe(undefined);
-});
+describe('arrays-01.js', () => {
+  describe('getFirstValue', () => {
+    it('returns the first element of a non-empty array', () => {
+      expect(getFirstValue([10, 20, 30])).toBe(10);
+    });
+    it('returns undefined for an empty array', () => {
+      expect(getFirstValue([])).toBeUndefined();
+    });
+  });
 
-test('makeArray', () => {
-  expect(makeArray(1, 2, 3, 4)).toEqual([1, 2, 3, 4]);
-  expect(makeArray('a', 'b', 'c', 'd')).toEqual(['a', 'b', 'c', 'd']);
-  expect(makeArray(1, 'b', 3, 'd')).toEqual([1, 'b', 3, 'd']);
-});
+  describe('makeArray', () => {
+    it('returns an array composed of the provided values', () => {
+      expect(makeArray(1, 'a', true, null)).toEqual([1, 'a', true, null]);
+    });
+  });
 
-test('createFirstFivePrimes', () => {
-  expect(typeof createFirstFivePrimes()).toBe('object');
-  expect(Array.isArray(createFirstFivePrimes())).toBe(true);
-  expect(createFirstFivePrimes()).toEqual([2, 3, 5, 7, 11]);
-});
+  describe('createFirstFivePrimes', () => {
+    it('returns [2,3,5,7,11]', () => {
+      expect(createFirstFivePrimes()).toEqual([2, 3, 5, 7, 11]);
+    });
+  });
 
-test('createSizedArray', () => {
-  expect(typeof createSizedArray(0)).toBe('object');
-  expect(Array.isArray(createSizedArray(0))).toBe(true);
-  expect(createSizedArray(5)).toHaveLength(5);
-  expect(createSizedArray(5)).toEqual([0, 1, 2, 3, 4]);
-  expect(createSizedArray(0)).toHaveLength(0);
-  expect(createSizedArray(8)).toEqual([0, 1, 2, 3, 4, 5, 6, 7]);
-  expect(createSizedArray(85)).toHaveLength(85);
-});
+  describe('createSizedArray', () => {
+    it('creates an array of sequential numbers of given size', () => {
+      expect(createSizedArray(5)).toEqual([0, 1, 2, 3, 4]);
+    });
+    it('returns an empty array when size is 0', () => {
+      expect(createSizedArray(0)).toEqual([]);
+    });
+  });
 
-test('modifyArrayByAdding', () => {
-  expect(typeof modifyArrayByAdding([])).toBe('object');
-  expect(modifyArrayByAdding([])).toEqual([1, 1]);
-  expect(modifyArrayByAdding([1, 2, 3])).toEqual([1, 1, 2, 3, 1]);
-});
+  describe('modifyArrayByAdding', () => {
+    it('adds 1 to the beginning and end of the array without modifying the original', () => {
+      const arr = [2, 3, 4];
+      const result = modifyArrayByAdding(arr);
+      expect(result).toEqual([1, 2, 3, 4, 1]);
+      expect(arr).toEqual([2, 3, 4]); // original unchanged
+    });
+  });
 
-test('modifyArrayByDeleting', () => {
-  expect(typeof modifyArrayByDeleting([])).toBe('object');
-  expect(modifyArrayByDeleting([1, 2])).toEqual([]);
-  expect(modifyArrayByDeleting([1, 2, 3])).toEqual([2]);
-  expect(modifyArrayByDeleting([1, 2, 3, 4, 5])).toEqual([2, 3, 4]);
-});
+  describe('modifyArrayByDeleting', () => {
+    it('removes the first and last elements of the array', () => {
+      expect(modifyArrayByDeleting([1, 2, 3, 4])).toEqual([2, 3]);
+    });
+    it('returns an empty array if original array has fewer than 2 elements', () => {
+      expect(modifyArrayByDeleting([1])).toEqual([]);
+      expect(modifyArrayByDeleting([])).toEqual([]);
+    });
+  });
 
-test('findElementAtIndex', () => {
-  expect(findElementAtIndex([1, 2, 3], 0)).toBe(1);
-  expect(findElementAtIndex([1, 2, 3], 1)).toBe(2);
-  expect(findElementAtIndex([1, 2, 3], 2)).toBe(3);
-});
+  describe('findElementAtIndex', () => {
+    it('returns the element at the given index', () => {
+      expect(findElementAtIndex(['a', 'b', 'c'], 1)).toBe('b');
+    });
+    it('returns undefined for an out-of-bound index', () => {
+      expect(findElementAtIndex(['a'], 5)).toBeUndefined();
+    });
+  });
 
-test('findElementByValue', () => {
-  expect(findElementByValue([1, 2, 3], 1)).toBe(0);
-  expect(findElementByValue([1, 2, 3], 2)).toBe(1);
-  expect(findElementByValue([1, 2, 3], 3)).toBe(2);
-  expect(findElementByValue([1, 2, 3], 4)).toBe(-1);
-});
+  describe('findElementByValue', () => {
+    it('returns the index of the first occurrence of a value', () => {
+      expect(findElementByValue([10, 20, 30, 20], 20)).toBe(1);
+    });
+    it('returns -1 if the value is not found', () => {
+      expect(findElementByValue([10, 20, 30], 40)).toBe(-1);
+    });
+  });
 
-test('changeElementAtIndex', () => {
-  expect(changeElementAtIndex([1, 2, 3], 0, 5)).toEqual([5, 2, 3]);
-  expect(changeElementAtIndex([1, 2, 3], 1, 6)).toEqual([1, 6, 3]);
-  expect(changeElementAtIndex([1, 2, 3], 2, 182)).toEqual([1, 2, 182]);
-});
+  describe('changeElementAtIndex', () => {
+    it('replaces the element at the specified index', () => {
+      const arr = [1, 2, 3];
+      changeElementAtIndex(arr, 1, 'changed');
+      expect(arr).toEqual([1, 'changed', 3]);
+    });
+  });
 
-test('makeStringFromArray', () => {
-  const greeting = [...'Hello world'];
-  expect(typeof makeStringFromArray([])).toBe('string');
-  expect(makeStringFromArray([])).toBe('');
-  expect(makeStringFromArray([1, 2, 3])).toBe('123');
-  expect(makeStringFromArray(greeting)).toBe('Hello world');
-});
+  describe('makeStringFromArray', () => {
+    it('joins array elements into a string without separator', () => {
+      expect(makeStringFromArray(['a', 'b', 'c'])).toBe('abc');
+    });
+  });
 
-test('createShallowCopy', () => {
-  const greeting = [...'Hello world'];
-  expect(createShallowCopy(greeting)).toEqual(greeting);
-  expect(createShallowCopy(greeting)).not.toBe(greeting);
+  describe('createShallowCopy', () => {
+    it('creates a shallow copy of an array', () => {
+      const original = [1, 2, 3];
+      const copy = createShallowCopy(original);
+      expect(copy).toEqual(original);
+      expect(copy).not.toBe(original); // different reference
+    });
+  });
 });

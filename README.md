@@ -2,87 +2,87 @@
 
 ## JS Arrays
 
-[![tested with vitest](https://img.shields.io/badge/tested_with-vitest-99424f.svg)](https://vitest.dev/)
+[![Tested with Vitest](https://img.shields.io/badge/tested_with-vitest-99424f.svg)](https://vitest.dev/)
 
+This project is written in [Node.js](https://nodejs.org/en/) and is tested with [Vitest](https://vitest.dev/) – a blazing fast unit test framework.
 
+- - -
 
+## Vitest: Pass/Fail vs. Coverage
 
-This project is written in [Node](https://nodejs.org/en/), and tested with [Vitest - Blazing Fast Unit Test Framework](https://vitestjs.io/).
+### Pass/Fail Status
+- **What It Indicates:**
+  Whether each individual test case ran successfully. A "pass" means the actual output matched the expected output for that specific scenario.
+- **Purpose:**
+  Confirm that your code behaves as intended for the cases you’ve explicitly tested.
 
----
+### Code Coverage
+- **What It Measures:**
+  The percentage of your source code that gets executed during testing. This includes:
+  - **Statements:** The proportion of executed statements.
+  - **Branches:** The proportion of executed branches in conditional logic.
+  - **Functions:** The proportion of executed functions.
+  - **Lines:** The proportion of executed lines of code.
+- **Purpose:**
+  Reveal untested parts of your code, highlighting potential blind spots even if all tests pass.
 
-## The assignment
+### Summary
+- **Pass/Fail Status:**
+  Provides immediate feedback on whether tests pass or fail.
+- **Coverage:**
+  Offers insight into how thoroughly your code is being tested.
 
-When npm runs vitest, all the tests are failing as seen at the end of its output to the console.
+### The Assignment
 
+Initially, when you run the tests the output may show failures (as illustrated below). This is expected until you complete the required changes in the source files.
 
-<img width="600" alt="all tests fail"  src="https://user-images.githubusercontent.com/13385801/189547187-9a6e14e8-0d1f-45e0-bde7-db0ffee09bff.png">
+![example: all tests fail](https://user-images.githubusercontent.com/13385801/189547187-9a6e14e8-0d1f-45e0-bde7-db0ffee09bff.png)
 
+### Instructions
 
-# Instructions
+#### 1\. Install your dependencies
 
-## Install your dependencies
+```
+npm install
+```
 
-`npm install`
+#### 2\. Run tests on a single file
 
----
+Start with the first file:
 
-## Run tests on a single file
+```
+npm run test:1
+```
 
-Start with the first file.
+This command runs `tests/arrays-01.test.js` with verbose reporting. You can run the other test files individually using:
 
-`npm run test:1`
+*   `npm run test:2`
+*   `npm run test:3`
+*   `npm run test:4`
 
-The above npm command is equivalent to the following but is easier to type:
+#### 3\. Edit and test each file sequentially
 
-`npx vitest tests/arrays-01.test.js --coverage --globals --run --reporter verbose`
+Edit the source files (e.g. `src/arrays-01.js`, `src/arrays-02.js`, etc.) according to the instructions within each file. Save your changes, then run the corresponding test command to check your work.
 
-as inside the package.json you see it is listed in the scripts:
+#### 4\. Run all tests
 
-`"test:1": "vitest tests/arrays-01.test.js --coverage --globals --run --reporter verbose"`
+Once you have completed all the individual files, run all tests together with:
 
-Repeat tha process for all of your test files.
+```
+npm test
+```
+This will run the tests and also create a coverage report.
 
-**NOTE:** As you are editing, don't forget to save the file before you try running the test or it won't be able to see the changes.
+#### 5\. Measuring Coverage
 
----
+Coverage reports are generated in the `coverage` folder. To view the report, open the `index.html` file within that folder using Live Server (`Go Live`).
 
-So the above example tests the first file `tests/arrays-01.test.js` and outputs the results to the console.
+You can use the [Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) for Visual Studio Code.
 
-If a test fails, vitest will identify it as failing and print one or more error messages, depending on the test expectations.
+#### 6\. Completing the Assignment
 
----
+When all tests pass, commit your changes and push to your repository. GitHub will run the same tests and report pass/fail.
 
-## Edit and test each file sequentially
+- - -
 
-One-by-one and in order, edit each JavaScript file and follow the instructions for each coding skill. You should run the test after each completed skill and see the pass count increase. When one file passes completely, you are ready for the next file.
-
----
-
-## Continue writing and fixing code until all tests pass
-
-When you feel the coding skills are completed, the following command will test all files in the repo that end in test.js
-
-`npm test`
-
----
-
-## Measuring Coverage
-
-Coverage reports will be placed in the coverage folder. To view, open index.html using Liver Server.
-
-[Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-
----
-
-
-## Completing the Assignment
-
-Commit and push after all tests pass. GitHub will run the same tests and report pass/fail.
-
----
-
-## Resources
-
-> "Unit testing ensures that all code meets quality standards before it's deployed."
-> [The importance of unit testing](https://fortegrp.com/the-importance-of-unit-testing/)
+For more details on Vitest, please see the [Vitest documentation](https://vitest.dev/).

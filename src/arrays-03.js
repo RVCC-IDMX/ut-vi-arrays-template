@@ -5,141 +5,123 @@
  * Test: tests/arrays-03.test.js
  * Path: src/arrays-03.js
  *
- * Description: Array methods
+ * Description: Challenges using various array methods.
  *
- * */
+ * Concepts:
+ *  - Utilizes forEach, map, filter, find, sort, join, reverse, and concat.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+ */
 
 /**
- * Adds all the elements of an array together
- * @param {array} arr - the array to convert to a number
- * @returns {number} - the sum of all the elements of the array
- * ? example: [1, 2, 3, 4, 5] => 15
- * ? must use the forEach() array method - https://youtu.be/GNXZpM-15Xg
+ * Returns the sum of all numbers in an array.
+ * @param {Array<number>} arr - An array of numbers.
+ * @returns {number} The sum.
  */
 function addUpArrayElements(arr) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Use a loop (for or forEach) to sum the elements.
 }
 
 /**
- * Squares each number of the array
- * @param {array} arr - the passed in array of numbers
- * @returns {array} - a new array with all the elements squared
- * ? example: [1, 2, 3, 4, 5] => [1, 4, 9, 16, 25]
- * ? must use the map() array method - https://youtu.be/nO4fLugOX9k
+ * Returns a new array with each number squared.
+ * @param {Array<number>} arr - An array of numbers.
+ * @returns {Array<number>} A new array with squared values.
  */
 function makeSquareNumbers(arr) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Use the map() method.
 }
 
 /**
- * Filters out words based on length
- * @param {array} arr - the array of words
- * @param {number} length - the length of the word to filter by
- * @returns {array} - a new array with all the words that are longer than
- * the given length
- * ? example: ['yes', 'goodbye', 'no', 'stop', 'maybe'], length = 4
- * ? => ['goodbye', 'maybe']
- * ? must use the filter() array method - https://youtu.be/JY5HUDMudew
+ * Filters an array of words, returning only those longer than a given length.
+ * @param {Array<string>} arr - An array of words.
+ * @param {number} length - The minimum length.
+ * @returns {Array<string>} The filtered array.
  */
 function filterForLargeWords(arr, length) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Finds the first even number in an array of integers
- * @param {array} arr - the array of integer numbers
- * @returns {number} - the first even number in the array
- * ? example: [1, 2, 3, 4, 5] => 2
- * ? must use the find() array method - https://youtu.be/KCx0mQEC4Zw
+ * Returns the first even number found in an array.
+ * @param {Array<number>} arr - An array of numbers.
+ * @returns {number|undefined} The first even number or undefined.
  */
 function findTheFirstEvenNumber(arr) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Sorts an array of words alphabetically
- * @param {array} arr - the array of words to sort
- * @returns {array} - a new array with the words sorted in alphabetical order
- * ?  order is ascending and case sensitive
- * ? example: ["ant", "Bug", "cat", "Dog"] => ["Bug","Dog","ant","cat"]
- * ? must use the sort() array method - https://youtu.be/3bLjcUmWveA
+ * Sorts an array of words in ascending, case-sensitive order.
+ * @param {Array<string>} arr - An array of words.
+ * @returns {Array<string>} The sorted array.
  */
 function sortCaseSensitive(arr) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Create a shallow copy and then use sort().
 }
 
 /**
- * Joins together all the elements of an array into a string
- * @param {array} arr  - the array of words to join
- * @param {string} separator - the string to use as a separator
- * @returns {string} - a string with all the words joined together
- * ? example: ["ant", "Bug", "cat", "Dog"], separator = '' => 'antBugcatDog'
- * ? example: ["ant", "Bug", "cat", "Dog"], separator = '-' => 'ant-Bug-cat-Dog'
- * ? must the join() array method - https://youtu.be/90MVWda5DlM
+ * Joins an array of words into a string using a specified separator.
+ * @param {Array} arr - The array of words.
+ * @param {string} separator - The separator.
+ * @returns {string} The resulting string.
  */
 function makeTheString(arr, separator) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Take an array and reverse the elements
- * @param {array} arr - the array to reverse
- * @returns {array} - a new array with the elements reversed
- * ? example: [1, 2, 3, 4, 5] => [5, 4, 3, 2, 1]
- * ? must use the reverse on a shallow copy of the original array
+ * Returns a new array with the elements reversed.
+ * @param {Array} arr - The original array.
+ * @returns {Array} The reversed array.
  */
 function reverseTheArray(arr) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 /**
- * Adds additional elements to the end of an array to make it a mirror
- * @param {array} arr - the array to make into a mirror
- * @returns {array} - a new array with the elements added to mirror the original
- * ? example: [ 1, 2, 3] => [1, 2, 3, 2, 1]
- * ? example: [ 1, 2, 3, 4] => [1, 2, 3, 4, 3, 2, 1]
+ * Creates a mirror array by appending a reversed copy of the original array.
+ * For example, [1, 2, 3] becomes [1, 2, 3, 2, 1].
+ * @param {Array} arr - The original array.
+ * @returns {Array} The mirror array.
  */
 function makeMirrorArray(arr) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Use slice (exclude the last element), reverse it, then concat.
 }
 
 /**
- * Creates a slice of array with n elements dropped from the end
- * @param {array} arr - the array
- * @param {number} n - the number (integer) of elements at the end to drop
- * @returns {array} - a new array with the n elements dropped from the end
- * ? example: [1, 2, 3, 4, 5], n = 2 => [1, 2, 3]
- * ? example: [1, 2, 3, 4, 5], n = 3 => [1, 2]
- * ? must use the slice() array method - https://youtu.be/ok-dya7hNm0
+ * Creates a new array by dropping the last n elements.
+ * @param {Array} arr - The original array.
+ * @param {number} n - Number of elements to drop.
+ * @returns {Array} The resulting array.
  */
 function dropRight(arr, n) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Use slice() to return elements up to arr.length - n.
 }
 
 /**
- * Creates a slice of array with n elements dropped from the beginning
- * @param {array} arr - the array
- * @param {number} n - the number of elements to take from the beginning
- * @returns {array} - a new array with the n elements taken from the beginning
- * ? example: [1, 2, 3, 4, 5], n = 2 => [3, 4, 5]
- * ? example: [1, 2, 3, 4, 5], n = 3 => [4, 5]
- * ? must use the slice() array method - https://youtu.be/ok-dya7hNm0
+ * Creates a new array by dropping the first n elements.
+ * @param {Array} arr - The original array.
+ * @param {number} n - Number of elements to drop.
+ * @returns {Array} The resulting array.
  */
 function dropLeft(arr, n) {
-  // write your code here & return value
+  // TODO: implement code
+  // HINT: Use slice() starting at index n.
 }
 
 /**
- * Checks if an array contains a given number
- * @param {array} arr the array to check
- * @param {*} val - the test value to check
- * @returns {boolean} - true if the array contains the value, false otherwise
- * ? example: [1, 2, 3, 4, 5], val = 3 => true
- * ? example: [1, 2, 3, 4, 5], val = 6 => false
- * ? must use the includes() array method - https://youtu.be/GNnHej31OGY
+ * Checks whether an array contains a specific value.
+ * @param {Array} arr - The array.
+ * @param {*} val - The value to search for.
+ * @returns {boolean} True if found, false otherwise.
  */
 function checkArrayForValue(arr, val) {
-  // write your code here & return value
+  // TODO: implement code
 }
 
 module.exports = {

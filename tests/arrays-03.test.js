@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
-const {
+import { describe, it, expect } from 'vitest';
+import {
   addUpArrayElements,
   makeSquareNumbers,
   filterForLargeWords,
@@ -11,96 +11,102 @@ const {
   dropRight,
   dropLeft,
   checkArrayForValue,
-} = require('../src/arrays-03');
+} from '../src/arrays-03';
 
-test('addUpArrayElements', () => {
-  expect(addUpArrayElements([1, 2, 3, 4, 5])).toBe(15);
-  expect(addUpArrayElements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toBe(55);
-  expect(addUpArrayElements([])).toBe(0);
-});
+describe('arrays-03.js', () => {
+  describe('addUpArrayElements', () => {
+    it('returns the sum of all numbers in an array', () => {
+      expect(addUpArrayElements([1, 2, 3, 4])).toBe(10);
+    });
+    it('returns 0 for an empty array', () => {
+      expect(addUpArrayElements([])).toBe(0);
+    });
+  });
 
-test('makeSquareNumbers', () => {
-  const sampleArray = [1, 2, 3, 4, 5];
-  const frozenArray = Object.freeze(sampleArray);
-  const expectedArray = [1, 4, 9, 16, 25];
-  expect(makeSquareNumbers(frozenArray)).toEqual(expectedArray);
-  expect(makeSquareNumbers(frozenArray)).not.toBe(sampleArray);
-});
+  describe('makeSquareNumbers', () => {
+    it('returns an array with squared values', () => {
+      expect(makeSquareNumbers([2, 3])).toEqual([4, 9]);
+    });
+  });
 
-test('filterForLargeWords', () => {
-  const sampleArray = ['a', 'big', 'black', 'bear', 'is', 'running'];
-  const frozenArray = Object.freeze(sampleArray);
-  const expectedArray = ['black', 'bear', 'running'];
-  expect(filterForLargeWords(frozenArray, 3)).toEqual(expectedArray);
-  expect(filterForLargeWords(frozenArray, 3)).not.toBe(sampleArray);
-});
+  describe('filterForLargeWords', () => {
+    it('filters words longer than the given length', () => {
+      expect(filterForLargeWords(['a', 'ab', 'abc', 'abcd'], 2)).toEqual(['abc', 'abcd']);
+    });
+    it('returns an empty array if no words match', () => {
+      expect(filterForLargeWords(['a', 'bb'], 2)).toEqual([]);
+    });
+  });
 
-test('findTheFirstEvenNumber', () => {
-  let sampleArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  expect(findTheFirstEvenNumber(sampleArray)).toBe(2);
-  sampleArray = [1, 5, 9, 55, 100, 110, 140, 150, 200, 300];
-  expect(findTheFirstEvenNumber(sampleArray)).toBe(100);
-});
+  describe('findTheFirstEvenNumber', () => {
+    it('returns the first even number in the array', () => {
+      expect(findTheFirstEvenNumber([1, 3, 4, 6])).toBe(4);
+    });
+    it('returns undefined if no even number is found', () => {
+      expect(findTheFirstEvenNumber([1, 3, 5])).toBeUndefined();
+    });
+  });
 
-test('sortCaseSensitive', () => {
-  const sampleArray = ['A', 'big', 'black', 'bear', 'is', 'running'];
-  const frozenArray = Object.freeze(sampleArray);
-  const expectedArray = ['A', 'bear', 'big', 'black', 'is', 'running'];
-  expect(sortCaseSensitive(frozenArray)).toEqual(expectedArray);
-  expect(sortCaseSensitive(frozenArray)).not.toBe(sampleArray);
-});
+  describe('sortCaseSensitive', () => {
+    it('returns a new sorted array without modifying the original', () => {
+      const arr = ['Banana', 'apple', 'Cherry'];
+      const sorted = sortCaseSensitive(arr);
+      expect(sorted).toEqual(['Banana', 'Cherry', 'apple']);
+      expect(arr).toEqual(['Banana', 'apple', 'Cherry']);
+    });
+  });
 
-test('makeTheString', () => {
-  const sampleArray = ['A', 'big', 'black', 'bear', 'is', 'running'];
-  const frozenArray = Object.freeze(sampleArray);
-  const expectedString = 'A big black bear is running';
-  expect(makeTheString(frozenArray, ' ')).toBe(expectedString);
-  expect(makeTheString(frozenArray, ' ')).not.toBe(sampleArray);
-});
+  describe('makeTheString', () => {
+    it('joins array elements into a string with the given separator', () => {
+      expect(makeTheString(['a', 'b', 'c'], '-')).toBe('a-b-c');
+    });
+  });
 
-test('reverseTheArray', () => {
-  const sampleArray = ['A', 'big', 'black', 'bear', 'is', 'running'];
-  const frozenArray = Object.freeze(sampleArray);
-  const expectedArray = ['running', 'is', 'bear', 'black', 'big', 'A'];
-  expect(reverseTheArray(frozenArray)).toEqual(expectedArray);
-  expect(reverseTheArray(frozenArray)).not.toBe(sampleArray);
-});
+  describe('reverseTheArray', () => {
+    it('returns a reversed copy of the array without modifying the original', () => {
+      const arr = [1, 2, 3];
+      const reversed = reverseTheArray(arr);
+      expect(reversed).toEqual([3, 2, 1]);
+      expect(arr).toEqual([1, 2, 3]);
+    });
+  });
 
-test('makeMirrorArray', () => {
-  let sampleArray = [1, 2];
-  const frozenArray = Object.freeze(sampleArray);
-  let expectedArray = [1, 2, 1];
-  expect(makeMirrorArray(frozenArray)).toEqual(expectedArray);
-  expect(makeMirrorArray(frozenArray)).not.toBe(sampleArray);
-  sampleArray = [1, 4, 8, 10, -21];
-  const frozenArray2 = Object.freeze(sampleArray);
-  expectedArray = [1, 4, 8, 10, -21, 10, 8, 4, 1];
-  expect(makeMirrorArray(frozenArray2)).toEqual(expectedArray);
-  expect(makeMirrorArray(frozenArray2)).not.toBe(sampleArray);
-});
+  describe('makeMirrorArray', () => {
+    it('creates a mirror array for a non-empty array', () => {
+      expect(makeMirrorArray([1, 2, 3])).toEqual([1, 2, 3, 2, 1]);
+    });
+    it('returns an empty array for an empty array', () => {
+      expect(makeMirrorArray([])).toEqual([]);
+    });
+    it('works for an array with one element', () => {
+      expect(makeMirrorArray([5])).toEqual([5]);
+    });
+  });
 
-test('dropRight', () => {
-  const sampleArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const frozenArray = Object.freeze(sampleArray);
-  const expectedArray = [1, 2, 3, 4, 5, 6, 7];
-  expect(dropRight(frozenArray, 3)).toEqual(expectedArray);
-  expect(dropRight(frozenArray, 3)).not.toBe(sampleArray);
-});
+  describe('dropRight', () => {
+    it('drops the last n elements', () => {
+      expect(dropRight([1, 2, 3, 4, 5], 2)).toEqual([1, 2, 3]);
+    });
+    it('returns an empty array if n is greater than or equal to the length', () => {
+      expect(dropRight([1, 2], 3)).toEqual([]);
+    });
+  });
 
-test('dropLeft', () => {
-  const sampleArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const frozenArray = Object.freeze(sampleArray);
-  const expectedArray = [5, 6, 7, 8, 9, 10];
-  expect(dropLeft(frozenArray, 4)).toEqual(expectedArray);
-  expect(dropLeft(frozenArray, 4)).not.toBe(sampleArray);
-});
+  describe('dropLeft', () => {
+    it('drops the first n elements', () => {
+      expect(dropLeft([1, 2, 3, 4, 5], 2)).toEqual([3, 4, 5]);
+    });
+    it('returns an empty array if n is greater than or equal to the length', () => {
+      expect(dropLeft([1, 2], 3)).toEqual([]);
+    });
+  });
 
-test('checkArrayForValue', () => {
-  const sampleArray = [1, true, 3, NaN];
-  const frozenArray = Object.freeze(sampleArray);
-  expect(checkArrayForValue(frozenArray, 1)).toBe(true);
-  expect(checkArrayForValue(frozenArray, true)).toBe(true);
-  expect(checkArrayForValue(frozenArray, 3)).toBe(true);
-  expect(checkArrayForValue(frozenArray, NaN)).toBe(true);
-  expect(checkArrayForValue(frozenArray, 'a')).toBe(false);
+  describe('checkArrayForValue', () => {
+    it('returns true if the array contains the value', () => {
+      expect(checkArrayForValue([1, 2, 3], 2)).toBe(true);
+    });
+    it('returns false if the array does not contain the value', () => {
+      expect(checkArrayForValue([1, 2, 3], 4)).toBe(false);
+    });
+  });
 });

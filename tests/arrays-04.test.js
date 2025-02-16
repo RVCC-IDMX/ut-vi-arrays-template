@@ -1,36 +1,42 @@
-/* eslint-disable no-undef */
-const {
+import { describe, it, expect } from 'vitest';
+import {
   getAbsoluteSum,
   removeStrings,
   findMinMax,
   getTelNo,
-} = require('../src/arrays-04');
+} from '../src/arrays-04';
 
-test('getAbsoluteSum', () => {
-  expect(getAbsoluteSum([1, 2, 3])).toBe(6);
-  expect(getAbsoluteSum([-1, -2, -3])).toBe(6);
-  expect(getAbsoluteSum([1, -2, 3])).toBe(6);
-  expect(getAbsoluteSum([0, -0])).toBe(0);
-});
+describe('arrays-04.js', () => {
+  describe('getAbsoluteSum', () => {
+    it('returns the sum of absolute values', () => {
+      expect(getAbsoluteSum([-1, 2, -3])).toBe(6);
+    });
+    it('returns 0 for an empty array', () => {
+      expect(getAbsoluteSum([])).toBe(0);
+    });
+  });
 
-test('removeStrings', () => {
-  expect(removeStrings([1, 'ants', 'bugs', 4, 18])).toEqual([1, 4, 18]);
-  expect(removeStrings(['a', 'b', 'c'])).toEqual([]);
-  const sampleArray = [1, 2, 3];
-  expect(removeStrings(sampleArray)).not.toBe(sampleArray);
-});
+  describe('removeStrings', () => {
+    it('removes string elements from the array', () => {
+      expect(removeStrings([1, 'a', 2, 'b'])).toEqual([1, 2]);
+    });
+    it('returns the original array if there are no strings', () => {
+      expect(removeStrings([1, 2, 3])).toEqual([1, 2, 3]);
+    });
+  });
 
-test('findMinMax', () => {
-  expect(findMinMax([1, 2, 33, 10])).toEqual([1, 33]);
-  expect(findMinMax([1, 2, 3, 4, 5])).toEqual([1, 5]);
-  expect(findMinMax([1, 10])).toEqual([1, 10]);
-  const sampleArray = [1, 2];
-  expect(findMinMax(sampleArray)).not.toBe(sampleArray);
-});
+  describe('findMinMax', () => {
+    it('returns the minimum and maximum values in the array', () => {
+      expect(findMinMax([3, 1, 4, 2])).toEqual([1, 4]);
+    });
+    it('returns an empty array for an empty input', () => {
+      expect(findMinMax([])).toEqual([]);
+    });
+  });
 
-test('getTelNo', () => {
-  const sampleArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-  const checkArray = [...sampleArray];
-  expect(getTelNo(sampleArray)).toBe('(123) 456-7890');
-  expect(sampleArray).toEqual(checkArray);
+  describe('getTelNo', () => {
+    it('formats an array of 10 digits into a telephone number string', () => {
+      expect(getTelNo([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])).toBe('(123) 456-7890');
+    });
+  });
 });

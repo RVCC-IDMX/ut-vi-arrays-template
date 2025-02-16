@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
-const {
+import { describe, it, expect } from 'vitest';
+import {
   findTheCharacterAtIndex,
   sliceTheString,
   splitTheString,
@@ -8,63 +8,64 @@ const {
   makeWordTitleCase,
   replaceTheString,
   makeSentenceTitleCase,
-} = require('../src/arrays-02');
+} from '../src/arrays-02';
 
-test('findTheCharacterAtIndex', () => {
-  const str = 'abcdefghijklmnopqrstuvwxyz';
-  expect(findTheCharacterAtIndex(str, 0)).toBe('a');
-  expect(findTheCharacterAtIndex(str, 25)).toBe('z');
-});
+describe('arrays-02.js', () => {
+  describe('findTheCharacterAtIndex', () => {
+    it('returns the character at a valid index', () => {
+      expect(findTheCharacterAtIndex('hello', 1)).toBe('e');
+    });
+    it('returns an empty string for an out-of-bound index', () => {
+      expect(findTheCharacterAtIndex('hello', 10)).toBe('');
+    });
+  });
 
-test('sliceTheString', () => {
-  const str = 'abcdefghijklmnopqrstuvwxyz';
-  expect(sliceTheString(str, 0, 3)).toBe('abc');
-  expect(sliceTheString(str, 3, 6)).toBe('def');
-});
+  describe('sliceTheString', () => {
+    it('returns the correct slice of the string', () => {
+      expect(sliceTheString('abcdef', 1, 4)).toBe('bcd');
+    });
+  });
 
-test('splitTheString', () => {
-  const str = 'Time will not slow down when something unpleasant lies ahead';
-  expect(splitTheString(str, ' ')).toEqual([
-    'Time',
-    'will',
-    'not',
-    'slow',
-    'down',
-    'when',
-    'something',
-    'unpleasant',
-    'lies',
-    'ahead',
-  ]);
-});
+  describe('splitTheString', () => {
+    it('splits the string by the given separator', () => {
+      expect(splitTheString('a,b,c', ',')).toEqual(['a', 'b', 'c']);
+    });
+  });
 
-test('makeAllUpperCase', () => {
-  const str = 'abcdefghijklmnopqrstuvwxyz';
-  expect(makeAllUpperCase(str)).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-});
+  describe('makeAllUpperCase', () => {
+    it('converts the string to uppercase', () => {
+      expect(makeAllUpperCase('hello')).toBe('HELLO');
+    });
+  });
 
-test('makeAllLowerCase', () => {
-  const str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  expect(makeAllLowerCase(str)).toBe('abcdefghijklmnopqrstuvwxyz');
-});
+  describe('makeAllLowerCase', () => {
+    it('converts the string to lowercase', () => {
+      expect(makeAllLowerCase('HELLO')).toBe('hello');
+    });
+  });
 
-test('makeWordTitleCase', () => {
-  let word = 'california';
-  expect(makeWordTitleCase(word)).toBe('California');
-  word = 'CaliFORnia';
-  expect(makeWordTitleCase(word)).toBe('California');
-});
+  describe('makeWordTitleCase', () => {
+    it('converts a single word to title case', () => {
+      expect(makeWordTitleCase('jAvAsCript')).toBe('Javascript');
+    });
+    it('returns an empty string if the word is empty', () => {
+      expect(makeWordTitleCase('')).toBe('');
+    });
+  });
 
-test('replaceTheString', () => {
-  const sentence = 'The quick brown fox jumps over the lazy dog';
-  expect(replaceTheString(sentence, 'quick', 'slow')).toBe(
-    'The slow brown fox jumps over the lazy dog'
-  );
-});
+  describe('replaceTheString', () => {
+    it('replaces all occurrences of a substring', () => {
+      expect(replaceTheString('foo bar foo', 'foo', 'baz')).toBe('baz bar baz');
+    });
+  });
 
-test('makeSentenceTitleCase', () => {
-  const sentence = 'the quick brown fox jumps over the lazy dog';
-  expect(makeSentenceTitleCase(sentence)).toBe(
-    'The Quick Brown Fox Jumps Over The Lazy Dog'
-  );
+  describe('makeSentenceTitleCase', () => {
+    it('converts each word in a sentence to title case', () => {
+      expect(makeSentenceTitleCase('hello world')).toBe('Hello World');
+    });
+    it('handles extra spaces correctly', () => {
+      // Note: extra spaces will be preserved.
+      expect(makeSentenceTitleCase('  hello  world  ')).toBe('  Hello  World  ');
+    });
+  });
 });
