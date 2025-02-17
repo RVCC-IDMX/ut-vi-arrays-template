@@ -57,6 +57,7 @@ function createSizedArray(size) {
  * Works on a shallow copy.
  * @param {Array} arr - The original array.
  * @returns {Array} The modified array.
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 function modifyArrayByAdding(arr) {
   // TODO: implement code
